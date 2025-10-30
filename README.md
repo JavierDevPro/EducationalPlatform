@@ -1,6 +1,6 @@
 # Pasos Guias para El desarrollo
 
- 1 - Termina de crear tus entidades en domain.
+ 1 - Termina de crear tus entidades en domain si falta algo sino continua.
  
  2 - Crea las interfaces que necesitas para los repositorios recuerda el correcno nombrado de estas (I + [nombre] + Repository.cs) va en interfaces de domain.
 
