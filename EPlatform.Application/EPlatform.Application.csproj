@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EPlatform.Domain\EPlatform.Domain.csproj" />
+    <ProjectReference Include="..\EPlatform.Infrastructure\EPlatform.Infrastructure.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
