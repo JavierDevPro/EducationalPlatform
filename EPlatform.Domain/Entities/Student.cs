@@ -1,4 +1,4 @@
-namespace webEscuela.Domain.Models;
+namespace EPlatform.Domain.Entities;
 
 public class Student
 {

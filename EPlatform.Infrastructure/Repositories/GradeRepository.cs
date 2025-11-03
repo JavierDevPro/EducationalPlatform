@@ -2,8 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using webEscuela.Domain.Entities;
+using EPlatform.Domain.Entities;
 using webEscuela.Domain.Interfaces;
+
 
 namespace webEscuela.Infrastructure.Repositories
 {

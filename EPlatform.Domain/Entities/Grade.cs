@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using EPlatform.Domain.Entities;
 
-namespace webEscuela.Domain.Entities
+namespace EPlatform.Domain.Entities
 {
     public class Grade
     {

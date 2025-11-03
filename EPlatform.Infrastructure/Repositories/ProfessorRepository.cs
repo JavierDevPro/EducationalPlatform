@@ -2,10 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using webEscuela.Domain.Entities;
-using webEscuela.Domain.Interfaces;
+using EPlatform.Domain.Entities;
+using EPlatform.Domain.Interfaces;
 
-namespace webEscuela.Infrastructure.Repositories
+
+namespace EPlatform.Infrastructure.Repositories
 {
     public class ProfessorRepository : IProfessorRepository
     {

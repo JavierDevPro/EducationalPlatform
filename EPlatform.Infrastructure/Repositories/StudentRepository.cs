@@ -1,7 +1,7 @@
+using EPlatform.Domain.Entities;
 using EPlatform.Domain.Interfaces;
+using EPlatform.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
-using webEscuela.Domain.Models;
-using webEscuela.Infrastructure.Data;
 
 namespace EPlatform.Infrastructure.Repositories;
 

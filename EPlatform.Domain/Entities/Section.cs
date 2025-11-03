@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace webEscuela.Domain.Models;
+namespace EPlatform.Domain.Entities;
 
 public class Section
 {

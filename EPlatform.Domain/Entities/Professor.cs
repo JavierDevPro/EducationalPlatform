@@ -1,6 +1,6 @@
 using EPlatform.Domain.Entities;
 
-namespace webEscuela.Domain.Entities
+namespace EPlatform.Domain.Entities
 {
     public class Professor
     {

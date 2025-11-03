@@ -2,11 +2,12 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using EPlatform.Domain.Entities;
+using EPlatform.Domain.Interfaces;
 using EPlatform.Infrastructure.Data;
 
 namespace EPlatform.Infrastructure.Repositories
 {
-    public class CourseRepository
+    public class CourseRepository: ICourseRepository<Course>
     {
         private readonly AppDbContext _context;
 

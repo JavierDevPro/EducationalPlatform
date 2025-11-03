@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using webEscuela.Domain.Entities;
+using EPlatform.Domain.Entities;
 
-namespace webEscuela.Domain.Interfaces
+namespace EPlatform.Domain.Interfaces
 {
     public interface IGradeRepository
     {

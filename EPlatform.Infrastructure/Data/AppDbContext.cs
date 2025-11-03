@@ -1,8 +1,8 @@
 using EPlatform.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using webEscuela.Domain.Entities;
 
-namespace webEscuela.Infrastructure.Data;
+
+namespace EPlatform.Infrastructure.Data;
 
 public class AppDbContext : DbContext
 {
