@@ -4,13 +4,13 @@ namespace webEscuela.Domain.Entities
 {
     public class Professor
     {
-        public int Id { get; set; }
-        public string FirstName { get; set; } = string.Empty;
-        public string LastName { get; set; } = string.Empty;
-        public string Email { get; set; } = string.Empty;
-        public string HireNumber { get; set; } = string.Empty;
+      public int Id { get; set; }
+      public string FirstName { get; set; }
+      public string LastName { get; set; }
+      public string Email { get; set; }
+      public string HireNumber { get; set; }
+      public string CreatedAt { get; set; }
 
-        // Relación: un profesor puede tener muchos cursos
-        public ICollection<Course>? Courses { get; set; }
+      public List<Course> courses = new List<Course>();
     }
 }
