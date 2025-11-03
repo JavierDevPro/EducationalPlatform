@@ -1,8 +1,18 @@
+using EPlatform.Infrastructure.Repositories;
+using EPlatform.Application.Interfaces;
+using EPlatform.Application.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+builder.Services.AddScoped<CourseRepository>();
+builder.Services.AddScoped<ICourseService, CourseService>();
+builder.Services.AddScoped<EnrollmentRepository>();
+builder.Services.AddScoped<IEnrollmentService, EnrollmentService>();
+
 
 var app = builder.Build();
 
