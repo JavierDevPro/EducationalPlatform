@@ -1,22 +1,26 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace EPlatform.Domain.Entities
 {
     public class Enrollment
     {
         public int Id { get; set; }
+        public int Cancelled { get; set; }
+        public DateTime EnrolledAt { get; set; }
 
-        [Required]
-        public int StudentId { get; set; }
-        public Student? Student { get; set; }
-
-        [Required]
         public int SectionId { get; set; }
-        public Section? Section { get; set; }
+        [ForeignKey("SectionId")]
+        public  Section section { get; set; }
 
-        public DateTime EnrolledAt { get; set; } = DateTime.Now;
+        public int StudentId { get; set; }
+        [ForeignKey("StudentId")]
+        public  Student student { get; set; }
 
-        public Grade? Grade { get; set; }
+        public int GradeId { get; set; }
+        [ForeignKey("GradeId")]
+        public  Grade grade { get; set; }
     }
 }

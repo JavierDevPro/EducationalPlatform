@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EPlatform.Domain.Entities
 {
@@ -15,9 +16,13 @@ namespace EPlatform.Domain.Entities
 
         public string? Description { get; set; }
 
-        public int ProfessorId { get; set; }
-        public Professor? Professor { get; set; }
+        public DateTime CreatedAt {get; set;}
 
-        public ICollection<Section>? Sections { get; set; }
+        public int ProfessorId { get; set; }
+      
+        [ForeignKey("ProfessorId")]
+        public  Professor professor { get; set; }
+
+        public List<Section> sections = new List<Section>();
     }
 }
