@@ -1,5 +1,7 @@
+
+using EPlatform.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using webEscuela.Domain.Models;
+using webEscuela.Domain.Entities;
 
 namespace webEscuela.Infrastructure.Data;
 
@@ -50,12 +52,7 @@ public class AppDbContext : DbContext
             .HasMany(f => f.sections)
             .WithOne(p => p.course)
             .HasForeignKey(p => p.CourseId);
-        
-        
-        
-        
 
-        
     }
     
 }

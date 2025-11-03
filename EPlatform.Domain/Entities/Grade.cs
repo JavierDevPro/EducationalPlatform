@@ -1,15 +1,17 @@
 using System.ComponentModel.DataAnnotations.Schema;
+using EPlatform.Domain.Entities;
 
-namespace webEscuela.Domain.Models;
-
-public class Grade
+namespace webEscuela.Domain.Entities
 {
-    public int id { get; set; }
-    public float score { get; set; }
-    public string remarks { get; set; }
-    public string recordedAt { get; set; }
-    
-    public int EnrollmentId { get; set; }
-    [ForeignKey("EnrollmentId")]
-    public Enrollment enrollment { get; set; }
+    public class Grade
+    {
+      public int id { get; set; }
+      public float score { get; set; }
+      public string remarks { get; set; }
+      public string recordedAt { get; set; }
+
+      public int EnrollmentId { get; set; }
+      [ForeignKey("EnrollmentId")]
+      public Enrollment enrollment { get; set; }
+    }
 }
