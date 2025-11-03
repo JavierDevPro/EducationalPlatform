@@ -1,4 +1,3 @@
-
 using EPlatform.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using webEscuela.Domain.Entities;
@@ -54,5 +53,4 @@ public class AppDbContext : DbContext
             .HasForeignKey(p => p.CourseId);
 
     }
-    
 }
