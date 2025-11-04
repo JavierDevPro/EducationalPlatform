@@ -11,6 +11,7 @@ namespace EPlatform.Domain.Entities
       public string HireNumber { get; set; }
       public string CreatedAt { get; set; }
 
-      public List<Course> courses = new List<Course>();
+      public List<Course> course = new List<Course>();
+      public int Course_id;
     }
 }

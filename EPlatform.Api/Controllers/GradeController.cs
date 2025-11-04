@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using webEscuela.Application.DTOs;
-using webEscuela.Application.Services;
+using EPlatform.Application.DTOs;
+using EPlatform.Application.Services;
 
 namespace webEscuela.Api.Controllers
 {

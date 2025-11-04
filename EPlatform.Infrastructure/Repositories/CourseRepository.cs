@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using EPlatform.Application.Services;
 using Microsoft.EntityFrameworkCore;
 using EPlatform.Domain.Entities;
 using EPlatform.Domain.Interfaces;
@@ -7,7 +8,7 @@ using EPlatform.Infrastructure.Data;
 
 namespace EPlatform.Infrastructure.Repositories
 {
-    public class CourseRepository: ICourseRepository<Course>
+    public class CourseRepository: ICourseRepository
     {
         private readonly AppDbContext _context;
 
@@ -19,16 +20,16 @@ namespace EPlatform.Infrastructure.Repositories
         public async Task<IEnumerable<Course>> GetAllAsync()
         {
             return await _context.Courses
-                .Include(c => c.Professor)
-                .Include(c => c.Sections)
+                .Include(c => c.professor)
+                .Include(c => c.sections)
                 .ToListAsync();
         }
 
         public async Task<Course> GetByIdAsync(int id)
         {
             return await _context.Courses
-                .Include(c => c.Professor)
-                .Include(c => c.Sections)
+                .Include(c => c.professor)
+                .Include(c => c.sections)
                 .FirstOrDefaultAsync(c => c.Id == id);
         }
 

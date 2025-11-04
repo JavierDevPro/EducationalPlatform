@@ -18,16 +18,16 @@ namespace EPlatform.Infrastructure.Repositories
         public async Task<IEnumerable<Enrollment>> GetAllAsync()
         {
             return await _context.Enrollments
-                .Include(e => e.Student)
-                .Include(e => e.Section)
+                .Include(e => e.student)
+                .Include(e => e.section)
                 .ToListAsync();
         }
 
         public async Task<Enrollment> GetByIdAsync(int id)
         {
             return await _context.Enrollments
-                .Include(e => e.Student)
-                .Include(e => e.Section)
+                .Include(e => e.student)
+                .Include(e => e.section)
                 .FirstOrDefaultAsync(e => e.Id == id);
         }
 

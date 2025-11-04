@@ -1,10 +1,10 @@
-namespace webEscuela.Application.DTOs
+namespace EPlatform.Application.DTOs
 {
     public class GradeDto
     {
         public int Id { get; set; }
         public int EnrollmentId { get; set; }
-        public decimal Score { get; set; }
+        public float Score { get; set; }
         public string? Remarks { get; set; }
         public string? RecordedAt { get; set; }
     }
@@ -12,13 +12,13 @@ namespace webEscuela.Application.DTOs
     public class CreateGradeDto
     {
         public int EnrollmentId { get; set; }
-        public decimal Score { get; set; }
+        public float Score { get; set; }
         public string? Remarks { get; set; }
     }
 
     public class UpdateGradeDto
     {
-        public decimal? Score { get; set; }
+        public float? Score { get; set; }
         public string? Remarks { get; set; }
     }
 }

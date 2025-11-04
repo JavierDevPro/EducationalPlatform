@@ -10,6 +10,6 @@ namespace EPlatform.Domain.Interfaces
         Task<IEnumerable<Course>> GetAllAsync();
         Task AddAsync(Course course);
         Task UpdateAsync(Course course);
-        Task DeleteAsync(Course course);
+        Task DeleteAsync(int Id);
     }
 }

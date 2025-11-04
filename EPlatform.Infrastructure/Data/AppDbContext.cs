@@ -11,6 +11,7 @@ public class AppDbContext : DbContext
     public DbSet<Enrollment> Enrollments { get; set; }
     public DbSet<Section>  Sections { get; set; }
     public DbSet<Professor> Professors { get; set; }
+    
     public DbSet<Grade>  Grades { get; set; }
 
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) {}
@@ -21,7 +22,7 @@ public class AppDbContext : DbContext
         
         base.OnModelCreating(modelBuilder);
         modelBuilder.Entity<Professor>()
-            .HasMany(f => f.courses)
+            .HasMany(f => f.course)
             .WithOne(p => p.professor)
             .HasForeignKey(p => p.ProfessorId);
         

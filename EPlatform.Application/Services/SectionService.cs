@@ -1,7 +1,7 @@
 using EPlatform.Application.Dtos;
 using EPlatform.Application.Interfaces;
 using EPlatform.Domain.Interfaces;
-using webEscuela.Domain.Models;
+using EPlatform.Domain.Entities;
 
 namespace Institution.Application.Services;
 

@@ -28,8 +28,8 @@ namespace EPlatform.Infrastructure.Repositories
         public Task<Professor> CreateAsync(Professor professor)
         {
             professor.Id = _idSeq++;
-            if (string.IsNullOrEmpty(professor.CreateAt))
-                professor.CreateAt = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss");
+            if (string.IsNullOrEmpty(professor.CreatedAt))
+                professor.CreatedAt = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss");
             _store.Add(professor);
             return Task.FromResult(professor);
         }

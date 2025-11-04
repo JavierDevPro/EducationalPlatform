@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using EPlatform.Domain.Entities;
-using webEscuela.Domain.Interfaces;
+using EPlatform.Domain.Interfaces;
 
 
 namespace webEscuela.Infrastructure.Repositories
@@ -20,33 +20,33 @@ namespace webEscuela.Infrastructure.Repositories
 
         public Task<Grade?> GetByIdAsync(int id)
         {
-            var g = _store.FirstOrDefault(x => x.Id == id);
+            var g = _store.FirstOrDefault(x => x.id == id);
             return Task.FromResult(g);
         }
 
         public Task<Grade> CreateAsync(Grade grade)
         {
-            grade.Id = _idSeq++;
-            if (string.IsNullOrEmpty(grade.RecordedAt))
-                grade.RecordedAt = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss");
+            grade.id = _idSeq++;
+            if (string.IsNullOrEmpty(grade.recordedAt))
+                grade.recordedAt = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss");
             _store.Add(grade);
             return Task.FromResult(grade);
         }
 
         public Task<Grade?> UpdateAsync(int id, Grade grade)
         {
-            var existing = _store.FirstOrDefault(x => x.Id == id);
+            var existing = _store.FirstOrDefault(x => x.id == id);
             if (existing == null) return Task.FromResult<Grade?>(null);
 
-            existing.Score = grade.Score != 0m ? grade.Score : existing.Score;
-            existing.Remarks = grade.Remarks ?? existing.Remarks;
+            existing.score = grade.score  != 0f ? grade.score : existing.score;
+            existing.remarks= grade.remarks ?? existing.remarks;
 
             return Task.FromResult<Grade?>(existing);
         }
 
         public Task<bool> DeleteAsync(int id)
         {
-            var existing = _store.FirstOrDefault(x => x.Id == id);
+            var existing = _store.FirstOrDefault(x => x.id == id);
             if (existing == null) return Task.FromResult(false);
             _store.Remove(existing);
             return Task.FromResult(true);

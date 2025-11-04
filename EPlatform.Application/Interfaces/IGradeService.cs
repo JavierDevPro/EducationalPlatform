@@ -1,6 +1,7 @@
+using EPlatform.Application.DTOs;
 using webEscuela.Application.DTOs;
 
-namespace webEscuela.Application.Interfaces
+namespace EPlatform.Application.Interfaces
 {
     public interface IGradeService
     {

@@ -1,8 +1,8 @@
 using System.Runtime.InteropServices.JavaScript;
 using EPlatform.Application.Dtos;
 using EPlatform.Application.Interfaces;
+using EPlatform.Domain.Entities;
 using EPlatform.Domain.Interfaces;
-using webEscuela.Domain.Models;
 
 namespace Institution.Application.Services;
 

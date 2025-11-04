@@ -2,9 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EPlatform.Application.DTOs;
+using EPlatform.Domain.Entities;
+using EPlatform.Domain.Interfaces;
 using webEscuela.Application.DTOs;
-using webEscuela.Domain.Entities;
-using webEscuela.Domain.Interfaces;
 
 namespace webEscuela.Application.Services
 {
@@ -27,7 +28,7 @@ namespace webEscuela.Application.Services
                 LastName = p.LastName,
                 Email = p.Email,
                 HireNumber = p.HireNumber,
-                CreateAt = p.CreateAt,
+                CreateAt = p.CreatedAt,
                 Course_id = p.Course_id
             });
         }
@@ -43,7 +44,7 @@ namespace webEscuela.Application.Services
                 LastName = p.LastName,
                 Email = p.Email,
                 HireNumber = p.HireNumber,
-                CreateAt = p.CreateAt,
+                CreateAt = p.CreatedAt,
                 Course_id = p.Course_id
             };
         }
@@ -57,7 +58,7 @@ namespace webEscuela.Application.Services
                 Email = dto.Email,
                 HireNumber = dto.HireNumber,
                 Course_id = dto.Course_id,
-                CreateAt = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss")
+                CreatedAt = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss")
             };
 
             var created = await _repo.CreateAsync(entity);
@@ -68,7 +69,7 @@ namespace webEscuela.Application.Services
                 LastName = created.LastName,
                 Email = created.Email,
                 HireNumber = created.HireNumber,
-                CreateAt = created.CreateAt,
+                CreateAt = created.CreatedAt,
                 Course_id = created.Course_id
             };
         }
@@ -94,7 +95,7 @@ namespace webEscuela.Application.Services
                 LastName = updated.LastName,
                 Email = updated.Email,
                 HireNumber = updated.HireNumber,
-                CreateAt = updated.CreateAt,
+                CreateAt = updated.CreatedAt,
                 Course_id = updated.Course_id
             };
         }

@@ -1,12 +1,15 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
-using webEscuela.Application.DTOs;
-using webEscuela.Domain.Entities;
-using webEscuela.Domain.Interfaces;
+using EPlatform.Domain.Entities;
+using EPlatform.Domain.Interfaces;
+using EPlatform.Application.Dtos;
+using EPlatform.Application.DTOs;
 
-namespace webEscuela.Application.Services
+
+namespace EPlatform.Application.Services
 {
     public class GradeService
     {
@@ -22,11 +25,11 @@ namespace webEscuela.Application.Services
             var list = await _repo.GetAllAsync();
             return list.Select(g => new GradeDto
             {
-                Id = g.Id,
+                Id = g.id,
                 EnrollmentId = g.EnrollmentId,
-                Score = g.Score,
-                Remarks = g.Remarks,
-                RecordedAt = g.RecordedAt
+                Score = g.score,
+                Remarks = g.remarks,
+                RecordedAt = g.recordedAt
             });
         }
 
@@ -36,11 +39,11 @@ namespace webEscuela.Application.Services
             if (g == null) return null;
             return new GradeDto
             {
-                Id = g.Id,
+                Id = g.id,
                 EnrollmentId = g.EnrollmentId,
-                Score = g.Score,
-                Remarks = g.Remarks,
-                RecordedAt = g.RecordedAt
+                Score = g.score,
+                Remarks = g.remarks,
+                RecordedAt = g.recordedAt
             };
         }
 
@@ -49,20 +52,20 @@ namespace webEscuela.Application.Services
             var entity = new Grade
             {
                 EnrollmentId = dto.EnrollmentId,
-                Score = dto.Score,
-                Remarks = dto.Remarks,
-                RecordedAt = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss")
+                score = dto.Score,
+                remarks = dto.Remarks,
+                recordedAt = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss")
             };
 
             var created = await _repo.CreateAsync(entity);
 
             return new GradeDto
             {
-                Id = created.Id,
+                Id = created.id,
                 EnrollmentId = created.EnrollmentId,
-                Score = created.Score,
-                Remarks = created.Remarks,
-                RecordedAt = created.RecordedAt
+                Score = created.score,
+                Remarks = created.remarks,
+                RecordedAt = created.recordedAt
             };
         }
 
@@ -70,19 +73,19 @@ namespace webEscuela.Application.Services
         {
             var toUpdate = new Grade
             {
-                Score = dto.Score ?? 0m,
-                Remarks = dto.Remarks
+                score = dto.Score ?? 0f,
+                remarks = dto.Remarks,
             };
 
             var updated = await _repo.UpdateAsync(id, toUpdate);
             if (updated == null) return null;
             return new GradeDto
             {
-                Id = updated.Id,
+                Id = updated.id,
                 EnrollmentId = updated.EnrollmentId,
-                Score = updated.Score,
-                Remarks = updated.Remarks,
-                RecordedAt = updated.RecordedAt
+                Score = updated.score,
+                Remarks = updated.remarks,
+                RecordedAt = updated.recordedAt
             };
         }
 
